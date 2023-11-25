@@ -4,7 +4,7 @@ function M.config()
     require('bufferline').setup {
         options = {
             mode = "buffers", -- set to "tabs" to only show tabpages instead
-            numbers = "none",
+            numbers = "ordinal",
             close_command = "bdelete! %d", -- can be a string | function, see "Mouse actions"
             right_mouse_command = "bdelete! %d", -- can be a string | function, see "Mouse actions"
             left_mouse_command = "buffer %d", -- can be a string | function, see "Mouse actions"
@@ -77,7 +77,7 @@ function M.config()
             persist_buffer_sort = true, -- whether or not custom sorted buffers should persist
             -- can also be a table containing 2 custom separators
             -- [focused and unfocused]. eg: { '|', '|' }
-            separator_style = "thin",
+            separator_style = "slanted",
             enforce_regular_tabs = false,
             always_show_bufferline = true,
             sort_by = 'id'

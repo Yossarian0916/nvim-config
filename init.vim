@@ -22,5 +22,10 @@ if exists("g:neovide")
 	let g:neovide_remember_window_size = v:true
 endif
 
+highlight Normal guibg=none
+highlight NonText guibg=none
+highlight Normal ctermbg=none
+highlight NonText ctermbg=none
+
 autocmd FileType markdown setlocal spell
 

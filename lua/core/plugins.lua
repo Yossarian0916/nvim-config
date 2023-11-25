@@ -12,11 +12,6 @@ return require('packer').startup(function()
     use 'dstein64/vim-startuptime'
     use 'lewis6991/impatient.nvim'
 
-    -- buffer
-    use {
-        'akinsho/bufferline.nvim',
-        requires = 'kyazdani42/nvim-web-devicons'
-    }
     use 'moll/vim-bbye' -- for more sensible delete buffer cmd
 
     -- themes
@@ -51,6 +46,22 @@ return require('packer').startup(function()
     use 'tamago324/nlsp-settings.nvim'
 
     use {
+        "kyazdani42/nvim-web-devicons",
+        config = function()
+
+        require("nvim-web-devicons").setup {
+            -- your personnal icons can go here (to override)
+            -- DevIcon will be appended to `name`
+            -- override = vim.tbl_extend("keep",override ,devicons.get_icons()),
+            override = override,
+            -- globally enable default icons (default to false)
+            -- will get overriden by `get_icons` option
+            default = true,
+        }
+        end,
+    }
+
+    use {
         'folke/trouble.nvim',
         requires = 'kyazdani42/nvim-web-devicons',
     }
@@ -65,6 +76,13 @@ return require('packer').startup(function()
     use {
         'nvim-lualine/lualine.nvim',
         requires = 'kyazdani42/nvim-web-devicons'
+    }
+
+    -- bufferline
+    use {
+        'akinsho/bufferline.nvim',
+        requires = "kyazdani42/nvim-web-devicons",
+        after = { "nvim-web-devicons" },
     }
 
     -- floating terminal
